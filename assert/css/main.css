@@ -952,6 +952,73 @@ th, td {
     width: 100%;
 }
 
+/* Details 元素样式 */
+details {
+    margin: 1.65em 0;
+    border: 2px solid #414141;
+    transition: border-color .24s ease;
+}
+
+details[open] {
+    border-color: rgba(255, 82, 82, 0.8);
+    border-color: #ff5252cc;
+}
+
+details summary {
+    display: block;
+    position: relative;
+    padding: 10px 20px 10px 32px;
+    background: #414141;
+    color: #fff;
+    font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", STHeiti, "Microsoft Yahei", "WenQuanYi Micro Hei", Arial, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    list-style: none;
+    transition: background .24s ease;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details summary::marker {
+    display: none;
+}
+
+details summary::before {
+    content: '#';
+    position: absolute;
+    left: 14px;
+    color: #4caf50;
+    font-weight: 400;
+}
+
+details summary:hover,
+details[open] summary {
+    background: rgba(255, 82, 82, 0.8);
+    background: #ff5252cc;
+}
+
+/* 内容区域 */
+details > div {
+    padding: 10px 15px;
+}
+
+details > div > *:first-child {
+    margin-top: 0;
+}
+
+details > div > *:last-child {
+    margin-bottom: 0;
+}
+
+details > p:empty {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
 @media only screen and (max-width: 767px) {
     .comment-parent .comment-children {
         margin-left: 0.6em;
